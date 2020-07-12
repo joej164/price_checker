@@ -32,6 +32,6 @@ class TestClass:
 
     def test_dungeons_3_complete_collection(self):
         url = 'https://store.playstation.com/en-us/product/UP2060-CUSA07824_00-0331006500115282'
-        expected_price = "$39.98"
+        expected_price = "$39.99"
         actual_price = find_playstation_price(url)
         assert expected_price == actual_price
