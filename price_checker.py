@@ -26,23 +26,23 @@ class TestClass:
     def teardown(self):
         time.sleep(5)   # Sleep for 1 second
 
-    def test_ps_castle_crashers_remastered(self):
-        url = 'https://store.playstation.com/en-us/product/UP2015-CUSA14409_00-CASTLECRASHERSNA'
-        expected_price = "$14.99"
-        actual_price = find_playstation_price(url)
-        assert expected_price == actual_price
+    # def test_ps_castle_crashers_remastered(self):
+    #     url = 'https://store.playstation.com/en-us/product/UP2015-CUSA14409_00-CASTLECRASHERSNA'
+    #     expected_price = "$14.99"
+    #     actual_price = find_playstation_price(url)
+    #     assert expected_price == actual_price
 
-    def test_ps_dungeons_3_complete_collection(self):
-        url = 'https://store.playstation.com/en-us/product/UP2060-CUSA07824_00-0331006500115282'
-        expected_price = "$39.99"
-        actual_price = find_playstation_price(url)
-        assert expected_price == actual_price
+    # def test_ps_dungeons_3_complete_collection(self):
+    #     url = 'https://store.playstation.com/en-us/product/UP2060-CUSA07824_00-0331006500115282'
+    #     expected_price = "$39.99"
+    #     actual_price = find_playstation_price(url)
+    #     assert expected_price == actual_price
 
-    def test_apple_saga_scarlet_grace_price(self):
-        url = 'https://apps.apple.com/us/app/saga-scarlet-grace-ambitions/id1237502412'
-        expected_price = "$29.99"
-        actual_price = find_apple_store_price(url)
-        assert expected_price == actual_price
+    # def test_apple_saga_scarlet_grace_price(self):
+    #     url = 'https://apps.apple.com/us/app/saga-scarlet-grace-ambitions/id1237502412'
+    #     expected_price = "$29.99"
+    #     actual_price = find_apple_store_price(url)
+    #     assert expected_price == actual_price
 
     def test_fail(self):
         assert 0
