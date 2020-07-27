@@ -42,3 +42,11 @@ jobs:
       with:
         name: price_changes
         path: joe_failures.txt
+    - name: get directory contents
+      run: ls > ls.txt
+    - name: artifact of dir
+      uses: actions/upload-artifact@v2
+      with:
+        name: dir list 
+        path: ls.txt
+      

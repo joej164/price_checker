@@ -9,8 +9,8 @@ def pytest_runtest_makereport(item, call):
     rep = outcome.get_result()
     # we only look at actual failing test calls, not setup/teardown
     if rep.when == "call" and rep.failed:
-        mode = "a" if os.path.exists("joe_failures.txt") else "w"
-        with open("joe_failures.txt", mode) as f:
+        mode = "a" if os.path.exists("~/output/joe_failures.txt") else "w"
+        with open("~/output/joe_failures.txt", mode) as f:
             # let's also access a fixture for the fun of it
             if "tmpdir" in item.fixturenames:
                 print('in tmpdir')
