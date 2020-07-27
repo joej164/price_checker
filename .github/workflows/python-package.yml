@@ -38,15 +38,9 @@ jobs:
       run: |
         pytest price_checker.py
     - name: Create artifact with failures
+      if: failure()
       uses: actions/upload-artifact@v2
       with:
         name: price_changes
-        path: joe_failures.txt
-    - name: get directory contents
-      run: ls > ls.txt
-    - name: artifact of dir
-      uses: actions/upload-artifact@v2
-      with:
-        name: dir list 
-        path: ls.txt
-      
+        path: failures.txt
+
