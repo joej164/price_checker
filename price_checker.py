@@ -43,3 +43,6 @@ class TestClass:
         expected_price = "$29.99"
         actual_price = find_apple_store_price(url)
         assert expected_price == actual_price
+
+    def test_fail(self):
+        assert 0

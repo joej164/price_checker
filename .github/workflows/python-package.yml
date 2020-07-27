@@ -37,3 +37,8 @@ jobs:
     - name: Test with pytest
       run: |
         pytest price_checker.py
+    - name: Create artifact with failures
+      uses: actions/upload-artifact@v2
+      with:
+        name: price_changes
+        path: failures.txt
