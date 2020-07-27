@@ -17,5 +17,7 @@ def pytest_runtest_makereport(item, call):
                 extra = " ({})".format(item.funcargs["tmpdir"])
             else:
                 extra = ""
+            print('****************')
             print(rep.nodeid, extra)
             f.write(rep.nodeid + extra + "\n")
+            print('file should have been written')
