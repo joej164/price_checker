@@ -19,6 +19,19 @@ def find_apple_store_price(url):
     return price
 
 
+def find_pioneer_firmware_versions(url):
+    response = requests.get(url)
+    soup = BeautifulSoup(response.text, 'html.parser')
+    all_rows = soup.find_all('tr')
+    my_data = [row.text for row in all_rows if row.attrs.get(
+        'data-model') == 'DMH-W4600NEX']
+
+    output_list = []
+    for row in my_data:
+        output_list.extend(row.split())
+    return output_list
+
+
 class TestClass:
     def setup(self):
         pass
@@ -43,3 +56,9 @@ class TestClass:
         expected_price = "$29.99"
         actual_price = find_apple_store_price(url)
         assert expected_price == actual_price
+
+    def test_pioneer_software_download_updated_firmware(self):
+        url = 'https://www.pioneerelectronics.com/PUSA/Support/Downloads'
+        expected_firmware = '1.13'
+        dmh_4600_next_fw = find_pioneer_firmware_versions(url)
+        assert expected_firmware in dmh_4600_next_fw
