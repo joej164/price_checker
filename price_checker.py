@@ -32,13 +32,15 @@ def find_pioneer_firmware_versions(url):
     return output_list
 
 
-class TestClass:
+class Common:
     def setup(self):
         pass
 
     def teardown(self):
         time.sleep(5)   # Sleep for 1 second
 
+
+class TestPlaystation(Common):
     def test_ps_castle_crashers_remastered(self):
         url = 'https://store.playstation.com/en-us/product/UP2015-CUSA14409_00-CASTLECRASHERSNA'
         expected_price = "$14.99"
@@ -51,12 +53,22 @@ class TestClass:
         actual_price = find_playstation_price(url)
         assert expected_price == actual_price
 
+    def test_tetris_effect(self):
+        url = 'https://store.playstation.com/en-us/product/UP0751-CUSA13594_00-TETRISEFFECT0000'
+        expected_price = "$39.99"
+        actual_price = find_playstation_price(url)
+        assert expected_price == actual_price
+
+
+class TestAppleStore(Common):
     def test_apple_saga_scarlet_grace_price(self):
         url = 'https://apps.apple.com/us/app/saga-scarlet-grace-ambitions/id1237502412'
         expected_price = "$29.99"
         actual_price = find_apple_store_price(url)
         assert expected_price == actual_price
 
+
+class TestPioneer(Common):
     def test_pioneer_software_download_updated_firmware(self):
         url = 'https://www.pioneerelectronics.com/PUSA/Support/Downloads'
         expected_firmware = '1.3'
