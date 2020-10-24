@@ -7,7 +7,7 @@ import time
 def find_playstation_price(url):
     response = requests.get(url)
     soup = BeautifulSoup(response.text, 'html.parser')
-    price = soup.find_all(class_='price-display__price')[0].get_text()
+    price = soup.find(class_='psw-h3').text
     return price
 
 
