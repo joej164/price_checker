@@ -59,6 +59,12 @@ class TestPlaystation(Common):
         actual_price = find_playstation_price(url)
         assert expected_price == actual_price
 
+    def test_13_sentinels(self):
+        url = 'https://store.playstation.com/en-us/product/UP0177-CUSA19610_00-BSTUBCUSA1961000'
+        expected_price = "$59.99"
+        actual_price = find_playstation_price(url)
+        assert expected_price == actual_price
+
 
 class TestAppleStore(Common):
     def test_apple_saga_scarlet_grace_price(self):
