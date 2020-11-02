@@ -32,6 +32,13 @@ def find_pioneer_firmware_versions(url):
     return output_list
 
 
+def find_wacom_price(url):
+    response = requests.get(url)
+    soup = BeautifulSoup(response.text, 'html.parser')
+    price = soup.find(class_='price').text
+    return price
+
+
 class Common:
     def setup(self):
         pass
@@ -80,3 +87,11 @@ class TestPioneer(Common):
         expected_firmware = '1.3'
         dmh_4600_next_fw = find_pioneer_firmware_versions(url)
         assert expected_firmware in dmh_4600_next_fw
+
+
+class TestWacom(Common):
+    def test_wacom_cintiq_sixteen(self):
+        url = 'https://estore.wacom.com/en-US/wacom-cintiq-16-dtk1660k0a.html'
+        expected_price = '$649.95'
+        cintiq_16_price = find_wacom_price(url)
+        assert cintiq_16_price == expected_price
