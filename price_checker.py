@@ -60,12 +60,6 @@ class TestPlaystation(Common):
         actual_price = find_playstation_price(url)
         assert expected_price == actual_price
 
-    def test_tetris_effect(self):
-        url = 'https://store.playstation.com/en-us/product/UP0751-CUSA13594_00-TETRISEFFECT0000'
-        expected_price = "$39.99"
-        actual_price = find_playstation_price(url)
-        assert expected_price == actual_price
-
     def test_13_sentinels(self):
         url = 'https://store.playstation.com/en-us/product/UP0177-CUSA19610_00-BSTUBCUSA1961000'
         expected_price = "$59.99"
