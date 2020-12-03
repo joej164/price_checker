@@ -44,25 +44,13 @@ class Common:
         pass
 
     def teardown(self):
-        time.sleep(5)   # Sleep for 1 second
+        time.sleep(5)   # Sleep for 5 seconds
 
 
 class TestPlaystation(Common):
     def test_ps_castle_crashers_remastered(self):
         url = 'https://store.playstation.com/en-us/product/UP2015-CUSA14409_00-CASTLECRASHERSNA'
         expected_price = "$14.99"
-        actual_price = find_playstation_price(url)
-        assert expected_price == actual_price
-
-    def test_ps_dungeons_3_complete_collection(self):
-        url = 'https://store.playstation.com/en-us/product/UP2060-CUSA07824_00-0331006500115282'
-        expected_price = "$39.99"
-        actual_price = find_playstation_price(url)
-        assert expected_price == actual_price
-
-    def test_13_sentinels(self):
-        url = 'https://store.playstation.com/en-us/product/UP0177-CUSA19610_00-BSTUBCUSA1961000'
-        expected_price = "$41.99"
         actual_price = find_playstation_price(url)
         assert expected_price == actual_price
 
