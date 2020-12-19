@@ -55,14 +55,6 @@ class TestPlaystation(Common):
         assert expected_price == actual_price
 
 
-class TestAppleStore(Common):
-    def test_apple_saga_scarlet_grace_price(self):
-        url = 'https://apps.apple.com/us/app/saga-scarlet-grace-ambitions/id1237502412'
-        expected_price = "$29.99"
-        actual_price = find_apple_store_price(url)
-        assert expected_price == actual_price
-
-
 class TestPioneer(Common):
     def test_pioneer_software_download_updated_firmware(self):
         url = 'https://www.pioneerelectronics.com/PUSA/Support/Downloads'
