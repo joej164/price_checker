@@ -44,14 +44,6 @@ class Common:
         time.sleep(5)   # Sleep for 5 seconds
 
 
-class TestPlaystation(Common):
-    def test_ps_castle_crashers_remastered(self):
-        url = 'https://store.playstation.com/en-us/product/UP2015-CUSA14409_00-CASTLECRASHERSNA'
-        expected_price = "$14.99"
-        actual_price = find_playstation_price(url)
-        assert expected_price == actual_price
-
-
 class TestPioneer(Common):
     def test_pioneer_software_download_updated_firmware(self):
         url = 'https://www.pioneerelectronics.com/PUSA/Car/NEX/DMH-W4600NEX'
