@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import pytest
 import time
+import hashlib
 
 
 def find_playstation_price(url):
@@ -36,6 +37,14 @@ def find_wacom_price(url):
     return price
 
 
+def check_logsdon(url):
+    response = requests.get(url)
+    soup = BeautifulSoup(response.text, 'html.parser')
+    resp = soup.find(class_='_1Cfot')
+    hashed = hashlib.md5(str(resp).encode())
+    return hashed.hexdigest()
+
+
 class Common:
     def setup(self):
         pass
@@ -50,3 +59,9 @@ class TestPioneer(Common):
         expected_firmware = '1.31'
         dmh_4600_next_fw = find_pioneer_firmware_versions(url)
         assert expected_firmware in dmh_4600_next_fw
+
+    def test_logsdon_website_for_any_changes(self):
+        url = 'https://www.farmhousebeer.com/'
+        expected_hash = '534952d2d7451c0709c8d0263a50005f'
+        actual_hash = check_logsdon(url)
+        assert actual_hash == expected_hash
