@@ -60,8 +60,18 @@ class TestPioneer(Common):
         dmh_4600_next_fw = find_pioneer_firmware_versions(url)
         assert expected_firmware in dmh_4600_next_fw
 
+
+class TestLogsdon(Common):
     def test_logsdon_website_for_any_changes(self):
         url = 'https://www.farmhousebeer.com/'
         expected_hash = '534952d2d7451c0709c8d0263a50005f'
         actual_hash = check_logsdon(url)
         assert actual_hash == expected_hash
+
+
+class TestPlaystation(Common):
+    def test_ai_somnium_files(self):
+        url = 'https://store.playstation.com/en-us/product/UP4774-CUSA14928_00-AISOMNIUMFILES00'
+        expected_price = '$59.99'
+        price = find_playstation_price(url)
+        assert expected_price == price
