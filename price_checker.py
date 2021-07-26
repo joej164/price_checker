@@ -64,7 +64,7 @@ class TestPioneer(Common):
 class TestLogsdon(Common):
     def test_logsdon_website_for_any_changes(self):
         url = 'https://www.farmhousebeer.com/'
-        expected_hash = '534952d2d7451c0709c8d0263a50005f'
+        expected_hash = '6adf97f83acf6453d4a6a4b1070f3754'
         actual_hash = check_logsdon(url)
         assert actual_hash == expected_hash
 
