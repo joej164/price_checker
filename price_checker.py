@@ -66,7 +66,7 @@ class TestLogsdon(Common):
         url = 'https://www.farmhousebeer.com/'
         expected_hashes = ['6adf97f83acf6453d4a6a4b1070f3754', '534952d2d7451c0709c8d0263a50005f']
         actual_hash = check_logsdon(url)
-        assert actual_hash in expected_hash
+        assert actual_hash in expected_hashes
 
 
 class TestPlaystation(Common):
