@@ -8,7 +8,7 @@ import hashlib
 def find_playstation_price(url):
     response = requests.get(url)
     soup = BeautifulSoup(response.text, 'html.parser')
-    price = soup.find(class_='psw-h3').text
+    price = soup.find(class_='psw-t-title-m').text
     return price
 
 
@@ -72,6 +72,6 @@ class TestLogsdon(Common):
 class TestPlaystation(Common):
     def test_ai_somnium_files(self):
         url = 'https://store.playstation.com/en-us/product/UP4774-CUSA14928_00-AISOMNIUMFILES00'
-        expected_price = '$59.99'
+        expected_price = '$39.99'
         price = find_playstation_price(url)
         assert expected_price == price
