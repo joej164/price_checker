@@ -69,9 +69,9 @@ class TestLogsdon(Common):
         assert actual_hash in expected_hashes
 
 
-class TestPlaystation(Common):
-    def test_ai_somnium_files(self):
-        url = 'https://store.playstation.com/en-us/product/UP4774-CUSA14928_00-AISOMNIUMFILES00'
-        expected_price = '$39.99'
-        price = find_playstation_price(url)
-        assert expected_price == price
+# class TestPlaystation(Common):
+#     def test_ai_somnium_files(self):
+#         url = 'https://store.playstation.com/en-us/product/UP4774-CUSA14928_00-AISOMNIUMFILES00'
+#         expected_price = '$39.99'
+#         price = find_playstation_price(url)
+#         assert expected_price == price
