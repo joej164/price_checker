@@ -75,9 +75,3 @@ class TestPlaystation(Common):
         expected_price = '$29.99'
         price = find_playstation_price(url)
         assert expected_price == price
-
-    def test_aces_of_the_luftwaffe(self):
-        url = 'https://store.playstation.com/en-us/product/UP0977-CUSA08179_00-AOTLS22002171006'
-        expected_price = '$14.99'
-        price = find_playstation_price(url)
-        assert expected_price == price
