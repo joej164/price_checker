@@ -56,7 +56,7 @@ class Common:
 class TestPioneer(Common):
     def test_pioneer_software_download_updated_firmware(self):
         url = 'https://www.pioneerelectronics.com/PUSA/Car/NEX/DMH-W4600NEX'
-        expected_firmware = '1.31'
+        expected_firmware = '2.01'
         dmh_4600_next_fw = find_pioneer_firmware_versions(url)
         assert expected_firmware in dmh_4600_next_fw
 
