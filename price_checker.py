@@ -68,10 +68,3 @@ class TestLogsdon(Common):
         actual_hash = check_logsdon(url)
         assert actual_hash in expected_hashes
 
-
-class TestPlaystation(Common):
-    def test_actraiser_renaissance(self):
-        url = 'https://store.playstation.com/en-us/product/UP0082-CUSA25035_00-ACTPS4APPNA00001/'
-        expected_price = '$29.99'
-        price = find_playstation_price(url)
-        assert expected_price == price
